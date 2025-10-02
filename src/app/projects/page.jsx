@@ -1,8 +1,8 @@
 const Page = async () => {
   const fetchData = async () => {
     const res = await fetch(
-      "https://68dd01ec7cd1948060ac09e9.mockapi.io/Movies/movies",
-      { cache: "force-cache" }
+      "https://68dd01ec7cd1948060ac09e9.mockapi.io/Movies/movies"
+     
     );
     const jsonData = res.json();
     console.log(jsonData);
