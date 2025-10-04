@@ -12,7 +12,8 @@ const Navbar = async () => {
                after:h-px after:bg-white/10 z-50"
     >
       <div className="hidden sm:ml-6 sm:block">
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 justify-around">
+          <div>
           <Link
             href="/"
             aria-current="page"
@@ -45,7 +46,8 @@ const Navbar = async () => {
           >
             Contact Us
           </Link>
-          
+          </div>
+          <div>
           {session ? (
             <div className="flex items-center space-x-4">
               <span className="text-sm text-gray-300">
@@ -73,6 +75,7 @@ const Navbar = async () => {
               Log In
             </Link>
           )}
+          </div>
         </div>
       </div>
     </nav>
