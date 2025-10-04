@@ -1,3 +1,5 @@
+import ContactForm from "../components/ContactForm";
+
 const Page = async () => {
   const fetchData = async () => {
     const res = await fetch(
@@ -15,12 +17,8 @@ const Page = async () => {
 
   const data = await fetchData();
   return (
-    <div className="grid grid-cols-4">
-      {data?.map((movie) => (
-        <div className="bg-red-200 p-3 m-2" key={movie.id}>
-          {movie.review}
-        </div>
-      ))}
+    <div className="">
+     <ContactForm />
     </div>
   );
 };
