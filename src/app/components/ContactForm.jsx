@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import { v4 as uuid } from 'uuid';
 export default function ContactForm() {
   const [userData, setUserData] = useState({ email: "", message: "" });
 
@@ -10,6 +10,7 @@ export default function ContactForm() {
       body: JSON.stringify({
         title: userData.email,
         description: userData.message,
+        id: uuid()
       }),
       headers: { "Content-Type": "application/json" },
     });
@@ -17,8 +18,7 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await fetchUserData();
-    userData.email = ""
-    userData.message =""
+    setUserData({email:"",message:""})
   };
 
   return (

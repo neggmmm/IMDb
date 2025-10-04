@@ -11,11 +11,11 @@ const Page = async () => {
 
   const data = await fetchData();
   return (
-    <div className="flex flex-col items-center mt-10">
-      <h1 className="text-5xl font-bold text-[#7ccced] ">
+    <div className="flex flex-row ml-100 justify-baseline items-center h-screen mt-10">
+      <h1 className="mb-20 text-5xl font-bold text-[#7ccced] ">
         {data.title}
       </h1>
-      <p className="w-100 text-xl m-3 text-[#eef3ef]">
+      <p className="w-100 text-xl ml-20 m-3 text-[#eef3ef]">
         {data.description}
       </p>
     </div>
