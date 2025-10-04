@@ -1,7 +1,10 @@
 import Link from "next/link";
 import React from "react";
+import { signOut, auth } from "@/auth.js"
 
-const Navbar = () => {
+const Navbar = async () => {
+  const session = await auth();
+  
   return (
     <nav
       className="fixed top-0 left-0 w-full bg-gray-800/50 p-3 
@@ -42,6 +45,34 @@ const Navbar = () => {
           >
             Contact Us
           </Link>
+          
+          {session ? (
+            <div className="flex items-center space-x-4">
+              <span className="text-sm text-gray-300">
+                Welcome, {session.user?.name || session.user?.email}
+              </span>
+              <form
+                action={async () => {
+                  "use server"
+                  await signOut()
+                }}
+              >
+                <button 
+                  type="submit"
+                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors duration-200"
+                >
+                  Sign Out
+                </button>
+              </form>
+            </div>
+          ) : (
+            <Link
+              href="/sign-in"
+              className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+            >
+              Log In
+            </Link>
+          )}
         </div>
       </div>
     </nav>
