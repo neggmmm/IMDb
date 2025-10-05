@@ -7,32 +7,29 @@ const Navbar = async () => {
   
   return (
     <nav
-      className="fixed top-0 left-0 w-full bg-gray-800/50 p-3 
-               after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 
-               after:h-px after:bg-white/10 z-50"
+      className="fixed left-[25%] w-[50%] rounded-3xl bg-transparent p-3 
+                after:absolute after:inset-x-0 after:bottom-0 
+               after:h-px border-1 border-white z-2 mt-7"
     >
       <div className="hidden sm:ml-6 sm:block">
-        <div className="flex space-x-4 justify-around">
-          <div>
+        <div className="flex space-x-4 justify-between">
+          
+            <div>
           <Link
             href="/"
             aria-current="page"
-            className="text-[#6051a4] px-3 py-2 text-sm font-medium"
+            className="text-[#6051a4] px-3 py-2 text-medium font-bold"
           >
             NEGM
           </Link>
+          </div>
+          <div>
           <Link
             href="/products"
             aria-current="page"
             className="rounded-md px-3 py-2 text-sm font-medium text-white"
           >
             Products
-          </Link>
-          <Link
-            href="/projects"
-            className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
-          >
-            Projects
           </Link>
           <Link
             href="/about"
@@ -47,7 +44,7 @@ const Navbar = async () => {
             Contact Us
           </Link>
           </div>
-          <div>
+          <div className="text-[#6051a4]">
           {session ? (
             <div className="flex items-center space-x-4">
               <span className="text-sm text-gray-300">
@@ -61,7 +58,7 @@ const Navbar = async () => {
               >
                 <button 
                   type="submit"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white transition-colors duration-200"
+                  className="rounded-md px-3 py-2 text-sm font-medium  hover:bg-white/5 hover:text-white transition-colors duration-200"
                 >
                   Sign Out
                 </button>
@@ -70,7 +67,7 @@ const Navbar = async () => {
           ) : (
             <Link
               href="/sign-in"
-              className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"
+              className="rounded-md px-3 py-2 text-sm font-medium  hover:bg-white/5 hover:text-white"
             >
               Log In
             </Link>

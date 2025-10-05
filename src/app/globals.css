@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+:root {
+  --primary-color: #009980;
+  /* Dark background shades */
+  --background-color: #0D0D0D;
+  --surface-color: #1A1A1A;
+  /* Accent colors */
+  --accent-color: #5E3FE9; /* purple hover color */
+  --accent-color-light: #7C5FF5;
+  /* Neutral grays / text */
+  --text-primary: #EAEAEA;
+  --text-secondary: #BFBFBF;
+
+  /* Optional highlights */
+  --highlight-color: #00E0C7; /* bright cyan glow */
+}

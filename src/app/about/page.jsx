@@ -11,7 +11,7 @@ const Page = async () => {
 
   const data = await fetchData();
   return (
-    <div className="flex flex-row ml-100 justify-baseline items-center h-screen mt-10">
+    <div className="flex flex-row ml-100 justify-baseline items-center h-screen">
       <h1 className="mb-20 text-5xl font-bold text-[#7ccced] ">
         {data.title}
       </h1>

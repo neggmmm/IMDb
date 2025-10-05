@@ -1,23 +1,23 @@
-import Image from "next/image"
-import ProjectGrid from "../components/ProjectGrid";
-import Link from "next/link";
+import ProjectCard from "../components/ProjectCard";
 
-const Page = () => {
-  
+
+const Page = async () => {
+  const fetchData = async () => {
+    const res = await fetch("https://68dd01ec7cd1948060ac09e9.mockapi.io/Movies/movies");
+    const jsonData = await res.json();
+    return jsonData;
+  };
+
+  const data = await fetchData();
+  const handleDelete = async(id) =>{
+    const res = await fetch(`ttps://68dd01ec7cd1948060ac09e9.mockapi.io/Movies/movies${id}`)
+  }
   return (
-    <div >
-      <div className="grid grid-cols-3">
-        <h1>Hello, It's Negm</h1>
-      </div>
-     <ProjectGrid limit={3}/>
-     <div className="flex justify-center">
-     <button className=" m-5">
-      <Link href={"/projects"}>
-      All projects
-      </Link>
-      </button>
-     </div>
-     </div>
+    <div className="grid grid-cols-2 p-6">
+      {data?.map((project) => (
+        <ProjectCard id={project.id} title={project.title} description={project.description} key={project.id}/>
+      ))}
+    </div>
   );
 };
 
