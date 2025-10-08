@@ -1,35 +1,33 @@
 import Link from "next/link";
-import Dither from "./components/DitherComp";
+import { Plasma } from "./components/PlasmaComp";
 
 export default function Home() {
   return (
     <div className="relative w-screen overflow-hidden bg-black h-screen">
-      <Dither
-    waveColor={[0, 0.6, 0.5]}
-    disableAnimation={false}
-    enableMouseInteraction={true}
-    mouseRadius={0.1}
-    colorNum={18.9}
-    waveAmplitude={0.34}
-    waveFrequency={2.1}
-    waveSpeed={0.05}
+        <Plasma 
+    color="#ac4e4e"
+    speed={0.6}
+    direction="forward"
+    scale={1.1}
+    opacity={0.8}
+    mouseInteractive={true}
   />
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center font-semibold">
         <h1 className="text-6xl text-[#D9D9D9]">
-          Hello, It&apos;s<span className="text-secondary font-bold"> Negm</span>
+          Hello, It&apos;s<span className="text-[#5a1c1c] font-bold"> Negm</span>
         </h1>
-        <p className="text-3xl text-[#eef3ef]">A software Engineer</p>
+        <p className="text-3xl text-[#D9D9D9]">A software Engineer</p>
         <div className="mt-5 flex items-center justify-center gap-5">
           <button
             type="button"
-            className="text-[#eef3ef] bg-transparent border hover:border-[#5e3fe9] hover:bg-[#5e3fe9] focus:outline-none focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5"
+            className="text-[#eef3ef] bg-transparent border hover:border-[#5a1c1c] hover:bg-[#5a1c1c] focus:outline-none focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5"
           >
             <Link href="/contact-us">Contact</Link>
           </button>
 
           <button
             type="button"
-            className="text-[#eef3ef] bg-[#6051a4] hover:bg-[#5e3fe9] focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 flex items-center gap-2"
+            className="text-[#eef3ef] bg-[#5a1c1c] hover:bg-[#e60000] focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 flex items-center gap-2"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path
@@ -45,9 +43,9 @@ export default function Home() {
 
           <button
             type="button"
-            className="text-[#eef3ef] bg-transparent border hover:border-[#5e3fe9] hover:bg-[#5e3fe9] focus:outline-none focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5"
+            className="text-[#eef3ef] bg-transparent border hover:border-[#5a1c1c] hover:bg-[#5a1c1c] focus:outline-none focus:ring-4 font-medium rounded-full text-sm px-5 py-2.5"
           >
-            <Link href="/projects">Projects</Link>
+            <Link href="/products">Projects</Link>
           </button>
         </div>
       </div>

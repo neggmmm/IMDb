@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 export default function ProjectGrid({limit}) {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
-    fetch("https://68dd01ec7cd1948060ac09e9.mockapi.io/Movies/movies")
+    fetch("/api/projects")
       .then((res) => res.json())
       .then((data) => setMovies(data));
   }, []);

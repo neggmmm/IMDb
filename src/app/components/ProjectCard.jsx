@@ -1,4 +1,4 @@
-"use client"; // 👈 makes it CSR
+"use client";
 
 import React, { useState } from "react";
 
@@ -11,10 +11,7 @@ export default function ProjectCard({ title, description, id }) {
   const handleDelete = async () => {
     try {
       setIsDeleting(true);
-      const res = await fetch(
-        `https://68dd01ec7cd1948060ac09e9.mockapi.io/Movies/movies/${id}`,
-        { method: "DELETE" }
-      );
+      const res = await fetch(`/api/projects?id=${encodeURIComponent(id)}`, { method: "DELETE" });
       if (res.ok) {
         setDeleted(true);
       } else {
@@ -30,14 +27,11 @@ export default function ProjectCard({ title, description, id }) {
   const handleUpdate = async () => {
     try {
       const updatedData = { title: "New Title", description: "Updated Desc" };
-      const res = await fetch(
-        `https://68dd01ec7cd1948060ac09e9.mockapi.io/Movies/movies/${id}`,
-        {
+      const res = await fetch(`/api/projects?id=${encodeURIComponent(id)}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(updatedData),
-        }
-      );
+        });
       if (res.ok) {
         const json = await res.json();
         console.log("Updated:", json);

@@ -6,10 +6,9 @@ const Navbar = async () => {
   const session = await auth();
   
   return (
+  
     <nav
-      className="fixed left-[25%] w-[50%] rounded-3xl bg-transparent p-3 
-                after:absolute after:inset-x-0 after:bottom-0 
-               after:h-px border-1 border-white z-2 mt-7"
+      className="w-[50%] rounded-3xl bg-transparent absolute left-[25%] mt-4 p-3 border-[#5a1c1c] border-2 top-0 z-2" 
     >
       <div className="hidden sm:ml-6 sm:block">
         <div className="flex space-x-4 justify-between">
@@ -18,7 +17,7 @@ const Navbar = async () => {
           <Link
             href="/"
             aria-current="page"
-            className="text-[#6051a4] px-3 py-2 text-medium font-bold"
+            className="text-[#5a1c1c] px-3 py-2 text-xl text-medium font-bold hover:text-[#a72626]"
           >
             NEGM
           </Link>
@@ -44,7 +43,7 @@ const Navbar = async () => {
             Contact Us
           </Link>
           </div>
-          <div className="text-[#6051a4]">
+          <div className="text-[#5a1c1c]">
           {session ? (
             <div className="flex items-center space-x-4">
               <span className="text-sm text-gray-300">
@@ -76,6 +75,7 @@ const Navbar = async () => {
         </div>
       </div>
     </nav>
+  
   );
 };
 

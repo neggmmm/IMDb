@@ -9,15 +9,16 @@ const Page = async () => {
   };
 
   const data = await fetchData();
-  const handleDelete = async(id) =>{
-    const res = await fetch(`ttps://68dd01ec7cd1948060ac09e9.mockapi.io/Movies/movies${id}`)
-  }
   return (
-    <div className="grid grid-cols-2 p-6">
+    <>
+    
+    <div className="grid grid-cols-2 p-6 mt-20">
+     
       {data?.map((project) => (
         <ProjectCard id={project.id} title={project.title} description={project.description} key={project.id}/>
       ))}
     </div>
+    </>
   );
 };
 
